@@ -3,6 +3,15 @@
 
 ### polyfill和shim区别
 ```
+shim
+一个shim是一个库，它将一系列新的、标准的API引入到一个旧的环境中，而且仅靠旧环境中已有的手段实现旧版兼容。
+例如我们经常听到的es5-shim，它是在es3的引擎上实现了es5的特性，但用到的都是es3的技术，而且在Node.js上和在浏览器上有完全相同的表现，所以它是shim。
+
+polyfill
+polyfill是解决跨浏览器API兼容性问题的shim，相当于一段代码。
+我们通常的做法是先检查当前浏览器是否支持某个API，如果不支持的话就加载对应的polyfill，然后新旧浏览器就都可以使用这个API了。
+
+
 shim是利用现有的API实现新的API，例如JQ的$.ajax封装了W3C的xmlhttprequest和IE的xhr请求；
 shim是一个库,它将一个新的API引入到一个旧的环境中,而且仅靠旧环境中已有的手段实现；
 
